@@ -32,7 +32,7 @@ module.exports = {
       address: req.body.address
     }, {
       where: {
-        ContactId: req.params.id
+        id: req.params.id
       },
       returning: true
     }).then(function (dbAddressBook) {
