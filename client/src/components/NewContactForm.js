@@ -41,7 +41,7 @@ class NewContactForm extends Component {
           <FormGroup>
             <Label for="exampleEmail">Contact Name:</Label>
             <Input
-              // type="text"
+              type="text"
               id="name"
               name="name"
               value={name}
