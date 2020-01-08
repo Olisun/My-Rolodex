@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import uuid from "uuid/v4";
 import ContactInfo from './ContactInfo'
+import NewContactForm from './NewContactForm';
 
 class ContactList extends Component {
   constructor(props) {
@@ -23,6 +24,13 @@ class ContactList extends Component {
     }
   }
 
+  createContact = (newContact) => {
+    const { contacts } = this.state;
+    this.setState({
+      contacts: [...contacts, newContact]
+    })
+  }
+
 
   render() {
     const { contacts, contact } = this.state;
@@ -39,6 +47,9 @@ class ContactList extends Component {
     return (
       <div>
         {Contacts}
+        <NewContactForm
+          createContact={this.createContact}
+        />
       </div>
     )
   }
