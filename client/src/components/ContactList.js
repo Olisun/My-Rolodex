@@ -28,7 +28,14 @@ class ContactList extends Component {
     const { contacts } = this.state;
     this.setState({
       contacts: [...contacts, newContact]
-    })
+    });
+  }
+
+  deleteContact = id => {
+    const { contacts } = this.state;
+    this.setState({
+      contacts: contacts.filter(contact => contact.id !== id)
+    });
   }
 
 
@@ -41,15 +48,16 @@ class ContactList extends Component {
           address={contact.address}
           id={contact.id}
           key={contact.key}
+          deleteContact={this.deleteContact}
         />
       )
     })
     return (
-      <div>
-        {Contacts}
+      <div className="container">
         <NewContactForm
           createContact={this.createContact}
         />
+        {Contacts}
       </div>
     )
   }
