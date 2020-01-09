@@ -38,6 +38,32 @@ class ContactList extends Component {
     });
   }
 
+  updateName = (id, updatedContact) => {
+    const { contacts } = this.state;
+    const updatedContacts = contacts.map(contact => {
+      if (contact.id === id) {
+        return { ...contact, name: updatedContact }
+      }
+      return contact;
+    })
+    this.setState({
+      contacts: updatedContacts
+    });
+  }
+
+  updateAddress = (id, updatedContact) => {
+    const { contacts } = this.state;
+    const updatedContacts = contacts.map(contact => {
+      if (contact.id === id) {
+        return { ...contact, address: updatedContact }
+      }
+      return contact;
+    })
+    this.setState({
+      contacts: updatedContacts
+    });
+  }
+
 
   render() {
     const { contacts, contact } = this.state;
@@ -49,6 +75,9 @@ class ContactList extends Component {
           id={contact.id}
           key={contact.key}
           deleteContact={this.deleteContact}
+          updateName={this.updateName}
+          updateAddress={this.updateAddress}
+
         />
       )
     })
