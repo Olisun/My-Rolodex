@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { Form, Card, CardImg, CardText, CardBody, CardTitle, CardSubtitle, Button } from 'reactstrap';
+import './ContactInfo.css';
 
 class ContactInfo extends Component {
   constructor(props) {

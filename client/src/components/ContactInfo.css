@@ -1,0 +1,8 @@
+.card {
+  color: red;
+  margin: 10px;
+  font-size: 14px;
+  box-shadow: 6px 6px 10px 0px rgba(13, 1, 1, 0.75);
+  -webkit-box-shadow: 6px 6px 10px 0px rgba(13, 1, 1, 0.75);
+  -moz-box-shadow: 6px 6px 10px 0px rgba(13, 1, 1, 0.75);
+}

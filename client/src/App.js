@@ -5,7 +5,7 @@ import ContactList from './components/ContactList';
 class App extends Component {
   render() {
     return (
-      <div>
+      <div className="This">
         <ContactList />
       </div>
     )

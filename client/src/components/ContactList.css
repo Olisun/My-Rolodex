@@ -1,7 +1,9 @@
 .contacts-container {
-  background-color: aqua;
-}
-
-body {
-  background: red;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  align-content: center;
+  margin-top: 40px;
+  background-color: #dedceb
 }
