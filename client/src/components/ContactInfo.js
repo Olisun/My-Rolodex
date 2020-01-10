@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Card, CardImg, CardText, CardBody, CardTitle, CardSubtitle, Button } from 'reactstrap';
+import { Form, Card, CardImg, CardText, CardBody, CardTitle, CardSubtitle, Button } from 'reactstrap';
 
 class ContactInfo extends Component {
   constructor(props) {
@@ -58,30 +58,34 @@ class ContactInfo extends Component {
     if (isEditing) {
       result = (
         <div>
-          <form>
-            <input
-              type="text"
-              name="name"
-              value={this.state.name}  // <-- can't destruct this because it's already being destructed by this.props.
-              onChange={this.handleInputChange}
-            />
-            <Button
-              onClick={this.handleNameUpdate}>
-              Update
+          <Card>
+            <CardBody>
+              <Form>
+                <input
+                  type="text"
+                  name="name"
+                  value={this.state.name}  // <-- can't destruct this because it's already being destructed by this.props.
+                  onChange={this.handleInputChange}
+                />
+                <Button
+                  onClick={this.handleNameUpdate}>
+                  Update
             </Button>
-          </form>
-          <form>
-            <input
-              type="text"
-              name="address"
-              value={this.state.address}  // <-- can't destruct this because it's already being destructed by this.props.
-              onChange={this.handleInputChange}
-            />
-            <Button
-              onClick={this.handleAddressUpdate}>
-              Update
+              </Form>
+              <Form>
+                <input
+                  type="text"
+                  name="address"
+                  value={this.state.address}  // <-- can't destruct this because it's already being destructed by this.props.
+                  onChange={this.handleInputChange}
+                />
+                <Button
+                  onClick={this.handleAddressUpdate}>
+                  Update
             </Button>
-          </form>
+              </Form>
+            </CardBody>
+          </Card>
         </div>
       );
     } else {

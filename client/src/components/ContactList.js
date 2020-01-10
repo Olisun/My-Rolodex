@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import uuid from "uuid/v4";
+import './ContactList.css';
 import ContactInfo from './ContactInfo'
 import NewContactForm from './NewContactForm';
 
@@ -77,7 +78,6 @@ class ContactList extends Component {
           deleteContact={this.deleteContact}
           updateName={this.updateName}
           updateAddress={this.updateAddress}
-
         />
       )
     })
@@ -86,7 +86,9 @@ class ContactList extends Component {
         <NewContactForm
           createContact={this.createContact}
         />
-        {Contacts}
+        <div className="contacts-container">
+          {Contacts}
+        </div>
       </div>
     )
   }
