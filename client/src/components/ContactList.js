@@ -65,6 +65,24 @@ class ContactList extends Component {
     });
   }
 
+  // const inventory = [
+  //   {name: 'apples', quantity: 2},
+  //   {name: 'bananas', quantity: 0},
+  //   {name: 'cherries', quantity: 5}
+  // ];
+
+  // function isCherries(fruit) { 
+  //   return fruit.name === 'cherries';
+  // }
+
+  // console.log(inventory.find(isCherries)); 
+  // { name: 'cherries', quantity: 5 }
+
+  findContact = () => {
+    const { contacts } = this.state;
+  }
+
+
 
   render() {
     const { contacts, contact } = this.state;
@@ -78,6 +96,7 @@ class ContactList extends Component {
           deleteContact={this.deleteContact}
           updateName={this.updateName}
           updateAddress={this.updateAddress}
+          changeMyMind={this.changeMyMind}
         />
       )
     })
@@ -85,6 +104,7 @@ class ContactList extends Component {
       <div className="container">
         <NewContactForm
           createContact={this.createContact}
+          changeMyMind={this.changeMyMind}
         />
         <div className="contacts-container">
           {Contacts}

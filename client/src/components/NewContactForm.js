@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { Button, Form, FormGroup, Label, Input, FormFeedback, FormText } from 'reactstrap';
 import { WOW } from 'wowjs/dist/wow';
 import uuid from "uuid/v4";
+import './NewContactForm.css';
 
 class NewContactForm extends Component {
   constructor(props) {
@@ -42,19 +43,27 @@ class NewContactForm extends Component {
 
   handleMyModalWorkAround = () => {
     const { isEditing } = this.state;
+    console.log("clicked");
     this.setState({
       isEditing: true,
     });
   }
 
-  render() {
-    const { name, address } = this.state;
+  changeMyMind = () => {
+    const { changeMyMind } = this.props;
     const { isEditing } = this.state;
+    this.setState({
+      isEditing: false
+    });
+  }
+
+  render() {
+    const { name, address, isEditing } = this.state;
     let result;
     if (isEditing) {
       result = (
         <div className="wow zoomIn slow">
-          <div>
+          <div className="card-area">
             <Form>
               <FormGroup>
                 <Label for="exampleEmail">Contact Name:</Label>
@@ -80,7 +89,15 @@ class NewContactForm extends Component {
                 <FormFeedback></FormFeedback>
                 <FormText></FormText>
               </FormGroup>
-              <Button color="danger" onClick={this.handleClick}>Submit</Button>
+              <Button
+                color="danger"
+                onClick={this.handleClick}>
+                Submit
+              </Button><span> </span>
+              <Button
+                onClick={this.changeMyMind}>
+                Cancel
+              </Button>
             </Form>
           </div>
         </div>
@@ -92,7 +109,7 @@ class NewContactForm extends Component {
             <Button
               onClick={this.handleMyModalWorkAround}>
               Add Contact
-          </Button>
+            </Button>
           </div>
         </div>
       )
