@@ -12,6 +12,14 @@ class ContactList extends Component {
     }
   }
 
+  componentDidMount() {
+    this.showData();
+  }
+
+  componentDidMount() {
+    this.createContact();
+  }
+
   createContact = () => {
     API.getContacts()
       .then(res => {
