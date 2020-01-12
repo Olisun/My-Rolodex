@@ -63,7 +63,7 @@ class ContactInfo extends Component {
     let result;
     if (isEditing) {
       result = (
-        <div className="wow zoomIn slow">
+        <div className="wow bounceIn">
           <Card>
             <CardBody>
               <Form>
@@ -97,7 +97,7 @@ class ContactInfo extends Component {
     } else {
       result = (
         <div>
-          <div>
+          <div className="slideInDown">
             <Card>
               <CardImg top width="100%" src="" alt="" />
               <CardBody>

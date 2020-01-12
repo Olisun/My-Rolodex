@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import uuid from "uuid/v4";
+import API from '../utilities/API';
 import './ContactList.css';
 import ContactInfo from './ContactInfo'
 import NewContactForm from './NewContactForm';
@@ -12,11 +12,18 @@ class ContactList extends Component {
     }
   }
 
-  createContact = (newContact) => {
-    const { contacts } = this.state;
-    this.setState({
-      contacts: [...contacts, newContact]
-    });
+  createContact = () => {
+    API.getContacts()
+      .then(res => {
+        if (res.data === []) {
+          API.saveContacts({
+            name: name,
+            address: address
+          })
+        }
+      })
+      .catch(error => console.log(error))
+    console.log(res.data)
   }
 
   deleteContact = id => {
