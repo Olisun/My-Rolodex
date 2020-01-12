@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { Form, Card, CardImg, CardText, CardBody, CardTitle, CardSubtitle, Button } from 'reactstrap';
+import { WOW } from 'wowjs/dist/wow';
 import './ContactInfo.css';
 
 class ContactInfo extends Component {
@@ -11,6 +12,10 @@ class ContactInfo extends Component {
       name: name,
       address: address
     }
+  }
+
+  componentDidMount() {
+    new WOW().init()
   }
 
   handleInputChange = event => {
@@ -58,7 +63,7 @@ class ContactInfo extends Component {
     let result;
     if (isEditing) {
       result = (
-        <div>
+        <div className="wow zoomIn slow">
           <Card>
             <CardBody>
               <Form>

@@ -1,8 +1,17 @@
 const db = require("../models");
 
 module.exports = {
-  findAllAddressBook: function (req, res) {
+  findAll: function (req, res) {
     db.AddressBook.findAll({}).then(function (dbAddressBook) {
+      res.json(dbAddressBook);
+    });
+  },
+  findOne: function (req, res) {
+    db.AddressBook.findOne({
+      where: {
+        id: req.params.id
+      }
+    }).then(function (dbAddressBook) {
       res.json(dbAddressBook);
     });
   },

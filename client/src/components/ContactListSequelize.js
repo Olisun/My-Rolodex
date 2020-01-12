@@ -8,20 +8,7 @@ class ContactList extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      contacts: [
-        {
-          name: "Oliver Sun",
-          address: "260 Clara Street",
-          key: uuid(),
-          id: uuid()
-        },
-        {
-          name: "Krazy Kitty",
-          address: "5 Goodwin Court",
-          key: uuid(),
-          id: uuid()
-        }
-      ]
+      contacts: []
     }
   }
 
